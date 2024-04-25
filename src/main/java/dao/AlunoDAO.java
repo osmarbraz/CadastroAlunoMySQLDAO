@@ -14,7 +14,7 @@ import modelo.Aluno;
  */
 public class AlunoDAO {
 
-    public static ArrayList<Aluno> minhaLista = new ArrayList<>();
+    public ArrayList<Aluno> minhaLista = new ArrayList<>();
 
     // Retorna a Lista de Alunos(objetos)
     public ArrayList getMinhaLista() {
