@@ -165,8 +165,8 @@ public class FrmCadastroAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_JBCadastrarActionPerformed
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
-        //Torna esta janela invisível
-        this.setVisible(false);
+        //Libera todos os recurso da interface gráfica
+        this.dispose();
 
     }//GEN-LAST:event_JBCancelarActionPerformed
 
