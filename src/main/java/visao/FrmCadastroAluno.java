@@ -22,7 +22,7 @@ public class FrmCadastroAluno extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        JTFnome = new javax.swing.JTextField();
+        JTFNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         JTFIdade = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -80,7 +80,7 @@ public class FrmCadastroAluno extends javax.swing.JFrame {
                         .addGap(52, 52, 52)
                         .addComponent(JBCadastrar))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTFnome))
+                    .addComponent(JTFNome))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -89,7 +89,7 @@ public class FrmCadastroAluno extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -121,10 +121,10 @@ public class FrmCadastroAluno extends javax.swing.JFrame {
             String curso = "";
             int fase = 0;
 
-            if (this.JTFnome.getText().length() < 2) {
+            if (this.JTFNome.getText().length() < 2) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
             } else {
-                nome = this.JTFnome.getText();
+                nome = this.JTFNome.getText();
             }
 
             if (this.JTFIdade.getText().length() <= 0) {
@@ -149,7 +149,7 @@ public class FrmCadastroAluno extends javax.swing.JFrame {
             if (this.objetoaluno.InsertAlunoBD(nome, idade, curso, fase)) {
                 JOptionPane.showMessageDialog(rootPane, "Aluno Cadastrado com Sucesso!");
                 // limpa campos da interface
-                this.JTFnome.setText("");
+                this.JTFNome.setText("");
                 this.JTFIdade.setText("");
                 this.JTFCurso.setText("");
                 this.JTFFase.setText("");
@@ -212,7 +212,7 @@ public class FrmCadastroAluno extends javax.swing.JFrame {
     private javax.swing.JTextField JTFCurso;
     private javax.swing.JTextField JTFFase;
     private javax.swing.JTextField JTFIdade;
-    private javax.swing.JTextField JTFnome;
+    private javax.swing.JTextField JTFNome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
