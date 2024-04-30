@@ -49,7 +49,7 @@ public class Aluno extends Pessoa {
         SIMULANDO A ESTRUTURA EM CAMADAS PARA USAR COM BANCOS DE DADOS.
      */
     // Retorna a Lista de Alunos(objetos)
-    public ArrayList getMinhaLista() {
+    public ArrayList<Aluno> getMinhaLista() {
         return dao.getMinhaLista();
     }
 
