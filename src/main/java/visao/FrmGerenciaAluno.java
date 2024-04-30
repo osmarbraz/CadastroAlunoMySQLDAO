@@ -222,10 +222,10 @@ public class FrmGerenciaAluno extends javax.swing.JFrame {
                 this.JTFIdade.setText("");
                 this.JTFCurso.setText("");
                 this.JTFFase.setText("");
-                JOptionPane.showMessageDialog(rootPane, "Aluno Alterado com Sucesso!");
+                JOptionPane.showMessageDialog(null, "Aluno Alterado com Sucesso!");
 
             }
-            //Exibe no console o aluno cadastrado
+            // Exibe no console o aluno cadastrado
             System.out.println(this.objetoaluno.getMinhaLista().toString());
         } catch (Mensagens erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
@@ -288,8 +288,8 @@ public class FrmGerenciaAluno extends javax.swing.JFrame {
 
     public void carregaTabela() {
         DefaultTableModel modelo = (DefaultTableModel) this.JTableAlunos.getModel();
-        modelo.setNumRows(0); //Posiciona na primeira linha da tabela
-        //Carrega a lista de objetos aluno
+        modelo.setNumRows(0); // Posiciona na primeira linha da tabela
+        // Carrega a lista de objetos aluno
         ArrayList<Aluno> minhaLista = objetoaluno.getMinhaLista();
         for (Aluno a : minhaLista) {
             modelo.addRow(new Object[]{

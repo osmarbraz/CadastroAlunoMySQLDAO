@@ -147,7 +147,7 @@ public class FrmCadastroAluno extends javax.swing.JFrame {
 
             // envia os dados para o Controlador cadastrar
             if (this.objetoaluno.InsertAlunoBD(nome, idade, curso, fase)) {
-                JOptionPane.showMessageDialog(rootPane, "Aluno Cadastrado com Sucesso!");
+                JOptionPane.showMessageDialog(null, "Aluno Cadastrado com Sucesso!");
                 // limpa campos da interface
                 this.JTFNome.setText("");
                 this.JTFIdade.setText("");
