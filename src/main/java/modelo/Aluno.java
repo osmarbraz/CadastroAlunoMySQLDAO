@@ -54,7 +54,7 @@ public class Aluno extends Pessoa {
     }
 
     // Cadastra novo aluno
-    public boolean InsertAlunoBD(String nome, int idade, String curso, int fase) {
+    public boolean insertAlunoBD(String nome, int idade, String curso, int fase) {
         int id = this.maiorID() + 1;
         Aluno objeto = new Aluno(id, nome, idade, curso, fase);
         dao.insertAlunoBD(objeto);
