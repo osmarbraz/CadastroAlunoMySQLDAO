@@ -290,8 +290,8 @@ public class FrmGerenciaAluno extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) this.JTableAlunos.getModel();
         modelo.setNumRows(0); //Posiciona na primeira linha da tabela
         //Carrega a lista de objetos aluno
-        ArrayList<Aluno> minhalista = objetoaluno.getMinhaLista();
-        for (Aluno a : minhalista) {
+        ArrayList<Aluno> minhaLista = objetoaluno.getMinhaLista();
+        for (Aluno a : minhaLista) {
             modelo.addRow(new Object[]{
                 a.getId(),
                 a.getNome(),
