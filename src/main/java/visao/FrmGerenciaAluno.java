@@ -186,31 +186,31 @@ public class FrmGerenciaAluno extends javax.swing.JFrame {
             int fase = 0;
 
             if (this.JTFNome.getText().length() < 2) {
-                throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
+                throw new Mensagem("Nome deve conter ao menos 2 caracteres.");
             } else {
                 nome = this.JTFNome.getText();
             }
 
             if (this.JTFIdade.getText().length() <= 0) {
-                throw new Mensagens("Idade deve ser n�mero e maior que zero.");
+                throw new Mensagem("Idade deve ser n�mero e maior que zero.");
             } else {
                 idade = Integer.parseInt(this.JTFIdade.getText());
             }
 
             if (this.JTFCurso.getText().length() < 2) {
-                throw new Mensagens("Curso deve conter ao menos 2 caracteres.");
+                throw new Mensagem("Curso deve conter ao menos 2 caracteres.");
             } else {
                 curso = this.JTFCurso.getText();
             }
 
             if (this.JTFFase.getText().length() <= 0) {
-                throw new Mensagens("Fase deve ser número e maior que zero.");
+                throw new Mensagem("Fase deve ser número e maior que zero.");
             } else {
                 fase = Integer.parseInt(this.JTFFase.getText());
             }
 
             if (this.JTableAlunos.getSelectedRow() == -1) {
-                throw new Mensagens("Primeiro Selecione um Aluno para Alterar");
+                throw new Mensagem("Primeiro Selecione um Aluno para Alterar");
             } else {
                 id = Integer.parseInt(this.JTableAlunos.getValueAt(this.JTableAlunos.getSelectedRow(), 0).toString());
             }
@@ -227,7 +227,7 @@ public class FrmGerenciaAluno extends javax.swing.JFrame {
             }
             // Exibe no console o aluno cadastrado
             System.out.println(this.objetoaluno.getMinhaLista().toString());
-        } catch (Mensagens erro) {
+        } catch (Mensagem erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (NumberFormatException erro2) {
             JOptionPane.showMessageDialog(null, "Informe um número válido.");
@@ -257,7 +257,7 @@ public class FrmGerenciaAluno extends javax.swing.JFrame {
             // validando dados da interface gráfica.
             int id = 0;
             if (this.JTableAlunos.getSelectedRow() == -1) {
-                throw new Mensagens("Primeiro Selecione um Aluno para APAGAR");
+                throw new Mensagem("Primeiro Selecione um Aluno para APAGAR");
             } else {
                 id = Integer.parseInt(this.JTableAlunos.getValueAt(this.JTableAlunos.getSelectedRow(), 0).toString());
             }
@@ -278,7 +278,7 @@ public class FrmGerenciaAluno extends javax.swing.JFrame {
             }
             // atualiza a tabela.
             System.out.println(this.objetoaluno.getMinhaLista().toString());
-        } catch (Mensagens erro) {
+        } catch (Mensagem erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } finally {
             // atualiza a tabela.
