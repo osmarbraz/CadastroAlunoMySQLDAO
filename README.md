@@ -50,3 +50,4 @@ CREATE TABLE tb_alunos (
 
 - banco.sql - Script do banco de dados.
 - pom.xml - Arquivo de configuração da ferramenta de automação Maven.
+- *.png - Arquivos de imagens do README.md.
