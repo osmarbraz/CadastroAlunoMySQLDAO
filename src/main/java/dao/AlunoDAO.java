@@ -17,7 +17,7 @@ public class AlunoDAO {
     public ArrayList<Aluno> minhaLista = new ArrayList<>();
 
     // Retorna a Lista de Alunos(objetos)
-    public ArrayList getMinhaLista() {
+    public ArrayList<Aluno> getMinhaLista() {
 
         minhaLista.clear(); // Limpa nosso ArrayList
 
