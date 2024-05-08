@@ -1,5 +1,8 @@
 package modelo;
 
+/**
+ * Classe que representa uma pessoa.
+ */
 public abstract class Pessoa {
 
     // Atributos

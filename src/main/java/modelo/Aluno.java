@@ -3,12 +3,17 @@ package modelo;
 import dao.AlunoDAO;
 import java.util.ArrayList;
 
+/**
+ * Classe que representa um aluno.
+ */
 public class Aluno extends Pessoa {
 
     // Atributos
     private String curso;
     private int fase;
-    AlunoDAO dao;
+
+    //Manipular o dao
+    private AlunoDAO dao;
 
     // Construtor de Objeto Vazio
     public Aluno() {
@@ -20,6 +25,7 @@ public class Aluno extends Pessoa {
         super(id, nome, idade);
         this.curso = curso;
         this.fase = fase;
+        //Instância o dao
         dao = new AlunoDAO();
     }
 

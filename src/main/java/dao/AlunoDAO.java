@@ -14,9 +14,12 @@ import modelo.Aluno;
  */
 public class AlunoDAO {
 
+    //Utilizado para retornar uma lista de alunos.
     public ArrayList<Aluno> minhaLista = new ArrayList<>();
 
-    // Retorna a Lista de Alunos(objetos)
+    /**
+     * Retorna a Lista de Alunos(objetos)
+     */
     public ArrayList<Aluno> getMinhaLista() {
 
         minhaLista.clear(); // Limpa nosso ArrayList
@@ -48,6 +51,9 @@ public class AlunoDAO {
         this.minhaLista = minhaLista;
     }
 
+    /**
+     * Retorna o maior id de um aluno.
+     */
     public int maiorID() {
         int maiorID = 0;
         try {
@@ -62,6 +68,9 @@ public class AlunoDAO {
         return maiorID;
     }
 
+    /**
+     * Retorna uma conexão com o banco de dados.
+     */
     public Connection getConexao() {
 
         Connection connection = null;  //instância da conexão
@@ -95,7 +104,9 @@ public class AlunoDAO {
         }
     }
 
-    // Cadastra novo aluno
+    /**
+     * Cadastra um novo aluno.
+     */
     public boolean insertAlunoBD(Aluno objeto) {
         String sql = "INSERT INTO tb_alunos(id,nome,idade,curso,fase) VALUES(?,?,?,?,?)";
         try {
@@ -117,7 +128,9 @@ public class AlunoDAO {
         }
     }
 
-    // Deleta um aluno específico pelo seu campo ID
+    /**
+     * Deleta um aluno específico pelo seu campo ID
+     */
     public boolean deleteAlunoBD(int id) {
         try {
             Statement stmt = this.getConexao().createStatement();
@@ -130,7 +143,9 @@ public class AlunoDAO {
         return true;
     }
 
-    // Edita um aluno específico pelo seu campo ID
+    /**
+     * Edita um aluno específico pelo seu campo ID
+     */
     public boolean updateAlunoBD(Aluno objeto) {
 
         String sql = "UPDATE tb_alunos set nome = ? ,idade = ? ,curso = ? ,fase = ? WHERE id = ?";
@@ -155,13 +170,15 @@ public class AlunoDAO {
         }
     }
 
-    //Carrega um aluno pelo ID
+    /**
+     * Carrega um aluno pelo ID
+     */
     public Aluno carregaAluno(int id) {
         Aluno objeto = new Aluno();
         objeto.setId(id);
         try {
             Statement stmt = this.getConexao().createStatement();
-            
+
             ResultSet res = stmt.executeQuery("SELECT * FROM tb_alunos WHERE id = " + id);
             res.next();
 
