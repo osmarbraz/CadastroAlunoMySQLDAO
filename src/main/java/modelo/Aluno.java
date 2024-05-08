@@ -15,12 +15,16 @@ public class Aluno extends Pessoa {
     //Manipular o dao
     private AlunoDAO dao;
 
-    // Construtor de Objeto Vazio
+    /**
+     * Construtor de Objeto Vazio
+     */
     public Aluno() {
         this(0, "", 0, "", 0);
     }
 
-    // Construtor com parâmetro
+    /**
+     * Construtor com parâmetro
+     */
     public Aluno(int id, String nome, int idade, String curso, int fase) {
         super(id, nome, idade);
         this.curso = curso;
@@ -51,15 +55,19 @@ public class Aluno extends Pessoa {
         return super.toString() + "curso=" + curso + ", fase=" + fase;
     }
 
-    /*  ABAIXO OS MéTODOS PARA USO JUNTO COM O DAO
+    /*  ABAIXO OS MÉTODOS PARA USO JUNTO COM O DAO
         SIMULANDO A ESTRUTURA EM CAMADAS PARA USAR COM BANCOS DE DADOS.
      */
-    // Retorna a Lista de Alunos(objetos)
+    /**
+     * Retorna a Lista de Alunos(objetos)
+     */
     public ArrayList<Aluno> getMinhaLista() {
         return dao.getMinhaLista();
     }
 
-    // Cadastra novo aluno
+    /**
+     * Cadastra novo aluno
+     */
     public boolean insertAlunoBD(String nome, int idade, String curso, int fase) {
         int id = this.maiorID() + 1;
         Aluno objeto = new Aluno(id, nome, idade, curso, fase);
@@ -68,25 +76,33 @@ public class Aluno extends Pessoa {
 
     }
 
-    // Deleta um aluno especÍfico pelo seu campo ID
+    /**
+     * Deleta um aluno especÍfico pelo seu campo ID
+     */
     public boolean deleteAlunoBD(int id) {
         dao.deleteAlunoBD(id);
         return true;
     }
 
-    // Edita um aluno especÍfico pelo seu campo ID
+    /**
+     * Edita um aluno especÍfico pelo seu campo ID
+     */
     public boolean updateAlunoBD(int id, String nome, int idade, String curso, int fase) {
         Aluno objeto = new Aluno(id, nome, idade, curso, fase);
         dao.updateAlunoBD(objeto);
         return true;
     }
 
-    // carrega dados de um aluno especÍfico pelo seu ID
+    /**
+     * Carrega dados de um aluno especÍfico pelo seu ID
+     */
     public Aluno carregaAluno(int id) {
         return dao.carregaAluno(id);
     }
 
-    // retorna o maior ID da nossa base de dados
+    /**
+     * Retorna o maior ID da nossa base de dados
+     */
     public int maiorID() {
         return dao.maiorID();
     }
