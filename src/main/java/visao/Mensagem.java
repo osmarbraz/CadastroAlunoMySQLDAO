@@ -7,7 +7,7 @@ public class Mensagem extends Exception {
 
     /**
      * Construtor com parâmetro.
-     * 
+     *
      * @param mensagem Uma string com a mensagem.
      */
     public Mensagem(String mensagem) {

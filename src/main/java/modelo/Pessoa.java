@@ -19,19 +19,19 @@ public abstract class Pessoa {
      */
     private int idade;
 
-    /** 
+    /**
      * Construtor de Objeto Vazio.
      */
     public Pessoa() {
-        this(0,"",0);
+        this(0, "", 0);
     }
-    
+
     /**
      * Construtor de Objeto com parâmetro.
-     * 
+     *
      * @param id O id do aluno.
      * @param nome O nome do aluno.
-     * @param idade A idade do aluno.          
+     * @param idade A idade do aluno.
      */
     public Pessoa(int id, String nome, int idade) {
         this.id = id;
@@ -42,7 +42,7 @@ public abstract class Pessoa {
     // Métodos GET e SET
     /**
      * Recuperador do id do aluno.
-     * 
+     *
      * @return Um inteiro com o Id do aluno.
      */
     public int getId() {
@@ -51,7 +51,7 @@ public abstract class Pessoa {
 
     /**
      * Modifica o id do aluno.
-     * 
+     *
      * @param id Um inteiro com o id do aluno.
      */
     public void setId(int id) {
@@ -60,7 +60,7 @@ public abstract class Pessoa {
 
     /**
      * Retorna o nome do aluno.
-     * 
+     *
      * @return Uma string com o nome do aluno.
      */
     public String getNome() {
@@ -69,7 +69,7 @@ public abstract class Pessoa {
 
     /**
      * Modifica o nome do aluno.
-     * 
+     *
      * @param nome Uma string com o nome do aluno.
      */
     public void setNome(String nome) {
@@ -78,7 +78,7 @@ public abstract class Pessoa {
 
     /**
      * Retorna a idade do aluno.
-     * 
+     *
      * @return Um inteiro com a idade do aluno.
      */
     public int getIdade() {
@@ -87,7 +87,7 @@ public abstract class Pessoa {
 
     /**
      * Modifica a idade do aluno.
-     * 
+     *
      * @param idade Um inteiro com a idade do aluno.
      */
     public void setIdade(int idade) {
@@ -96,7 +96,7 @@ public abstract class Pessoa {
 
     /**
      * Retorna os dados da pessoa em uma string.
-     * 
+     *
      * @return Uma string com todos os dados da pessoa concatenado.
      */
     @Override
