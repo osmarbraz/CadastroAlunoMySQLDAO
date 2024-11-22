@@ -25,10 +25,10 @@
    
     <name>CadastroAlunoMySQLDAO</name>
     
-    <!-- Plugins do maven -->
     <build>
         <!-- Plugins do Maven -->
-        <plugins>       
+        <plugins>      
+            <!-- Plugin de geração do jar com as dependências --> 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -39,7 +39,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <!-- Configura a classe principal do projeto -->
+                            <!-- Configura o arquivo de manifesto com a classe principal do projeto -->
                             <archive>
                                 <manifest>
                                     <mainClass>
