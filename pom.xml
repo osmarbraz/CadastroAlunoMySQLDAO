@@ -13,7 +13,9 @@
         <exec.mainClass>principal.Principal</exec.mainClass>
     </properties>    
     
-    <!-- Lista das dependências do projeto -->      
+    <name>CadastroAlunoMySQLDAO</name>
+    
+    <!-- Lista das dependências do projeto -->
     <dependencies>
         <!-- Driver JDBC para MySQL -->      
         <dependency>
@@ -22,8 +24,6 @@
             <version>8.3.0</version>
         </dependency>
     </dependencies>  
-   
-    <name>CadastroAlunoMySQLDAO</name>
     
     <build>
         <!-- Plugins do Maven -->
