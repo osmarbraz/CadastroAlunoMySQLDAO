@@ -19,6 +19,7 @@ public class AlunoDAO {
 
     /**
      * Retorna a Lista de Alunos(objetos)
+     * @return Uma lista com os alunos.
      */
     public ArrayList<Aluno> getMinhaLista() {
 
@@ -47,12 +48,17 @@ public class AlunoDAO {
         return minhaLista;
     }
 
+    /**
+     * Modificado de minhaLista.
+     * @param minhaLista Uma lista com os alunos.
+     */
     public void setMinhaLista(ArrayList<Aluno> minhaLista) {
         this.minhaLista = minhaLista;
     }
 
     /**
      * Retorna o maior id de um aluno.
+     * @return Um inteiro com o maior id de aluno.
      */
     public int maiorID() {
         int maiorID = 0;
@@ -70,6 +76,7 @@ public class AlunoDAO {
 
     /**
      * Retorna uma conexão com o banco de dados.
+     * @return Uma conexão com o banco de dados.
      */
     public Connection getConexao() {
 
@@ -106,10 +113,12 @@ public class AlunoDAO {
 
     /**
      * Cadastra um novo aluno.
+     * @param objeto Um aluno a ser inserido no banco de dados.
+     * @return Verdadeiro e falso se incluiu o aluno no banco de dados.
      */
-    public boolean insertAlunoBD(Aluno objeto) {
-        String sql = "INSERT INTO tb_alunos(id,nome,idade,curso,fase) VALUES(?,?,?,?,?)";
+    public boolean insertAlunoBD(Aluno objeto) {        
         try {
+            String sql = "INSERT INTO tb_alunos(id,nome,idade,curso,fase) VALUES(?,?,?,?,?)";
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
 
             stmt.setInt(1, objeto.getId());
@@ -130,6 +139,9 @@ public class AlunoDAO {
 
     /**
      * Deleta um aluno específico pelo seu campo ID
+     * 
+     * @param id Id do aluno a ser apagado.
+     * @return Verdadeiro ou falso se apagou o aluno com o id especificado.
      */
     public boolean deleteAlunoBD(int id) {
         try {
@@ -145,6 +157,8 @@ public class AlunoDAO {
 
     /**
      * Edita um aluno específico pelo seu campo ID
+     * @param objeto Um objeto aluno a ser atualizado.
+     * @return Verdadeiro ou falso se atualizou o aluno.
      */
     public boolean updateAlunoBD(Aluno objeto) {
 
@@ -172,6 +186,8 @@ public class AlunoDAO {
 
     /**
      * Carrega um aluno pelo ID
+     * @param id O id do aluno a ser carregado.
+     * @return Um objeto aluno preenchido do banco de dados.
      */
     public Aluno carregaAluno(int id) {
         Aluno objeto = new Aluno();
