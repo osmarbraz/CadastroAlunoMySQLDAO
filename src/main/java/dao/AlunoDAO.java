@@ -54,7 +54,7 @@ public class AlunoDAO {
     /**
      * Retorna o maior id de um aluno.
      */
-    public int maiorID() {
+    public int maiorId() {
         int maiorID = 0;
         try {
             Statement stmt = this.getConexao().createStatement();
@@ -107,7 +107,7 @@ public class AlunoDAO {
     /**
      * Cadastra um novo aluno.
      */
-    public boolean insertAlunoBD(Aluno objeto) {
+    public boolean inserirAlunoBD(Aluno objeto) {
         String sql = "INSERT INTO tb_alunos(id,nome,idade,curso,fase) VALUES(?,?,?,?,?)";
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
@@ -131,7 +131,7 @@ public class AlunoDAO {
     /**
      * Deleta um aluno específico pelo seu campo ID
      */
-    public boolean deleteAlunoBD(int id) {
+    public boolean apagarAlunoBD(int id) {
         try {
             Statement stmt = this.getConexao().createStatement();
             stmt.executeUpdate("DELETE FROM tb_alunos WHERE id = " + id);
@@ -146,7 +146,7 @@ public class AlunoDAO {
     /**
      * Edita um aluno específico pelo seu campo ID
      */
-    public boolean updateAlunoBD(Aluno objeto) {
+    public boolean atualizarAlunoBD(Aluno objeto) {
 
         String sql = "UPDATE tb_alunos set nome = ? ,idade = ? ,curso = ? ,fase = ? WHERE id = ?";
 
@@ -173,7 +173,7 @@ public class AlunoDAO {
     /**
      * Carrega um aluno pelo ID
      */
-    public Aluno carregaAluno(int id) {
+    public Aluno carregarAluno(int id) {
         Aluno objeto = new Aluno();
         objeto.setId(id);
         try {

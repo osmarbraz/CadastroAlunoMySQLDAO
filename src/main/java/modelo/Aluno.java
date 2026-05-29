@@ -112,10 +112,10 @@ public class Aluno extends Pessoa {
      * @param fase A fase do aluno.
      * @return Verdadeiro ou falso se conseguiu fazer a inclusão.
      */
-    public boolean insertAlunoBD(String nome, int idade, String curso, int fase) {
-        int id = this.maiorID() + 1;
+    public boolean inserirAlunoBD(String nome, int idade, String curso, int fase) {
+        int id = this.maiorId() + 1;
         Aluno objeto = new Aluno(id, nome, idade, curso, fase);
-        dao.insertAlunoBD(objeto);
+        dao.inserirAlunoBD(objeto);
         return true;
     }
 
@@ -125,8 +125,8 @@ public class Aluno extends Pessoa {
      * @param id Id do aluno a ser excluído.
      * @return Verdadeiro ou falso se conseguiu fazer a exclusão.
      */
-    public boolean deleteAlunoBD(int id) {
-        dao.deleteAlunoBD(id);
+    public boolean apagarAlunoBD(int id) {
+        dao.apagarAlunoBD(id);
         return true;
     }
 
@@ -140,9 +140,9 @@ public class Aluno extends Pessoa {
      * @param fase A fase do aluno.
      * @return Verdadeiro ou falso se conseguiu fazer a inclusão.
      */
-    public boolean updateAlunoBD(int id, String nome, int idade, String curso, int fase) {
+    public boolean atualizarAlunoBD(int id, String nome, int idade, String curso, int fase) {
         Aluno objeto = new Aluno(id, nome, idade, curso, fase);
-        dao.updateAlunoBD(objeto);
+        dao.atualizarAlunoBD(objeto);
         return true;
     }
 
@@ -152,8 +152,8 @@ public class Aluno extends Pessoa {
      * @param id O id do aluno a ser carregado.
      * @return Um objeto aluno preenchido.
      */
-    public Aluno carregaAluno(int id) {
-        return dao.carregaAluno(id);
+    public Aluno carregarAluno(int id) {
+        return dao.carregarAluno(id);
     }
 
     /**
@@ -161,7 +161,7 @@ public class Aluno extends Pessoa {
      *
      * @return Um inteiro com o maior valor de Id de aluno.
      */
-    public int maiorID() {
-        return dao.maiorID();
+    public int maiorId() {
+        return dao.maiorId();
     }
 }
